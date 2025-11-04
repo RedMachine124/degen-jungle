@@ -25,6 +25,6 @@ export async function getJupiterPrice(mint: string): Promise<number | null> {
 export async function getMergedPrice(symbol: string, mint: string): Promise<PriceReading> {
   const jup = await getJupiterPrice(mint);
   const ts = Date.now();
-  if (jup) return { symbol, mint, price: jup, source: 'JUP', ts };
+  if (jup != null) return { symbol, mint, price: jup, source: 'JUP', ts };
   return { symbol, mint, price: null, source: 'NONE', ts, note: 'no price source' };
 }
