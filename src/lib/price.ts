@@ -7,11 +7,11 @@ type PriceReading = {
   note?: string;
 };
 
+const JUP_DEFAULT = 'https://price.jup.ag/v6/price';
+
 export async function getJupiterPrice(mint: string): Promise<number | null> {
   try {
-    const base = process.env.NEXT_PUBLIC_JUPITER_PRICE_URL;
-    if (!base) return null;
-    // Jupiter expects the token MINT in `ids`
+    const base = process.env.NEXT_PUBLIC_JUPITER_PRICE_URL || JUP_DEFAULT;
     const r = await fetch(`${base}?ids=${encodeURIComponent(mint)}`, { cache: 'no-store' });
     if (!r.ok) return null;
     const j = await r.json();
@@ -22,7 +22,6 @@ export async function getJupiterPrice(mint: string): Promise<number | null> {
   }
 }
 
-// For now, we rely on Jupiter only (most reliable for MVP).
 export async function getMergedPrice(symbol: string, mint: string): Promise<PriceReading> {
   const jup = await getJupiterPrice(mint);
   const ts = Date.now();
