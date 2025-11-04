@@ -12,7 +12,26 @@ export const TOKENS = [
     mint: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
     pyth: 'Crypto.USDC/USD',
     logo: 'https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png'
+  },
+  {
+    symbol: 'BONK',
+    name: 'Bonk',
+    mint: 'DezXzRpDQY8yS1t8AGoa5YG1cVjwbw5CEjoxdFyts3AQ',
+    pyth: 'Crypto.BONK/USD',
+    logo: 'https://assets.coingecko.com/coins/images/28600/large/bonk.jpg'
+  },
+  {
+    symbol: 'WIF',
+    name: 'dogwifhat',
+    mint: '4k3Dyjzvzp8eM7xyz7KQnGZq7rdt88v84oco7yZ67P4T',
+    pyth: 'Crypto.WIF/USD',
+    logo: 'https://assets.coingecko.com/coins/images/33875/large/wif.png'
+  },
+  {
+    symbol: 'JUP',
+    name: 'Jupiter',
+    mint: 'JUP4Fb2cQiFbxFgp8D7sB5h8s3RRwqCNWj9jmGzADsm',
+    pyth: null,
+    logo: 'https://assets.coingecko.com/coins/images/33186/large/jupiter.jpg'
   }
 ];
-
-export const ALLOWED_MINTS = new Set(TOKENS.map(t => t.mint));
