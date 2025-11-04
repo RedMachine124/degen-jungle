@@ -14,13 +14,6 @@ export const TOKENS = [
     logo: 'https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png'
   },
   {
-    symbol: 'USDT',
-    name: 'Tether',
-    mint: 'Es9vMFrzaCERz6vQYzCzJX4wzYhp1rQKX1b6C6ZB9q3E',
-    pyth: null,
-    logo: 'https://assets.coingecko.com/coins/images/325/large/Tether-logo.png'
-  },
-  {
     symbol: 'BONK',
     name: 'Bonk',
     mint: 'DezXzRpDQY8yS1t8AGoa5YG1cVjwbw5CEjoxdFyts3AQ',
