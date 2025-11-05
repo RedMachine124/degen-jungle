@@ -98,7 +98,7 @@ export default function Home() {
               <div key={h.mint} className="card" style={{ borderColor: '#21252e' }}>
                 <b>{h.symbol}</b> <span className="badge">{h.source}</span>
                 <div style={{ marginTop: 6, fontSize: 14 }}>
-                  {h.price ? `$${h.price.toLocaleString()}` : '—'} &nbsp;
+                  {h.price != null ? `$${h.price.toLocaleString()}` : "—"};
                   {h.pct10m != null && <b className={h.pct10m >= 0 ? 'ok' : 'bad'}>
                     {h.pct10m >= 0 ? '+' : ''}{h.pct10m.toFixed(2)}%
                   </b>}
