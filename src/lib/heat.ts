@@ -1,6 +1,7 @@
 // src/lib/heat.ts
-type Point = { t: number; p: number };
+// Uses trending list + Jupiter pricing; keeps 10-minute history in memory
 
+type Point = { t: number; p: number };
 const WINDOW_MS = 10 * 60 * 1000;
 const hist: Record<string, Point[]> = {};
 
@@ -13,9 +14,7 @@ async function jupPrice(mint: string): Promise<number | null> {
     const j = await r.json();
     const price = j?.data?.[mint]?.price;
     return typeof price === "number" ? price : null;
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 }
 
 export async function getHeatForMint(symbol: string, mint: string) {
@@ -41,3 +40,4 @@ export async function getHeatForMint(symbol: string, mint: string) {
     source: "JUP" as const,
   };
 }
+
